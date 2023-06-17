@@ -14,6 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Reem+Kufi+Fun:wght@400;700&display=swap" rel="stylesheet">
 
+
+    <script src="../js/index.js"></script>
     <title>SuperSubs</title>
   </head>
   <body>
@@ -34,12 +36,12 @@
         <li class="nav-item">
         <a class="nav-link" href="checkout.html">Checkout</a>
          </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
     </nav>
 
     
@@ -49,131 +51,332 @@
 
                 <div class="featured-subs-heading2">
                     <h2>SUB-BUILDER</h2>
-                  </div>
+                </div>
 
                 <div class="col-6">
                     <div class="sub-backdrop">
                         <div class="bread-top">
-                            <img src="../assets/bread/white_bread.png" alt="">
+                            <img src="../assets/bread/white_bread.png" alt="" id="br-top">
+                        </div>
+
+                        <div class="topping-images">
+                          <img src="../assets/topings/avocado.png" alt="" id="img-avo" class="img-vis">
+                          <img src="../assets/topings/bacon.png" alt="" id="img-bac" class="img-vis">
+                          <img src="../assets/topings/blue_cheese.png" alt="" id="img-blu" class="img-vis">
+                          <img src="../assets/topings/carrot.png" alt="" id="img-car" class="img-vis">
+                          <img src="../assets/topings/cheddar.png" alt="" id="img-che" class="img-vis">
+                          <img src="../assets/topings/chicken-leg.png" alt="" id="img-chi" class="img-vis">
+                          <img src="../assets/topings/cucumber.png" alt="" id="img-cuc" class="img-vis">
+                          <img src="../assets/topings/egg.png" alt="" id="img-egg" class="img-vis">
+                          <img src="../assets/topings/feta.png" alt="" id="img-fet" class="img-vis">
+                          <img src="../assets/topings/garlic.png" alt="" id="img-ger" class="img-vis">
+                          <img src="../assets/topings/gouda.png" alt="" id="img-gou" class="img-vis">
+                          <img src="../assets/topings/ham.png" alt="" id="img-ham" class="img-vis">
+                          <img src="../assets/topings/lettuce.png" alt="" id="img-let" class="img-vis">
+                          <img src="../assets/topings/mushroom.png" alt="" id="img-mus" class="img-vis">
+                          <img src="../assets/topings/onion.png" alt="" id="img-oni" class="img-vis">
+                          <img src="../assets/topings/paprika.png" alt="" id="img-pap" class="img-vis">
+                          <img src="../assets/topings/pepperoni.png" alt="" id="img-pep" class="img-vis">
+                          <img src="../assets/topings/red-onion.png" alt="" id="img-red" class="img-vis">
+                          <img src="../assets/topings/tomato.png" alt="" id="img-tom" class="img-vis">
+                          <img src="../assets/topings/crisps.png" alt="" id="img-cri" class="img-vis">
+
+                          <img src="../assets/sauces/1000island.png" alt="" id="img-100" class="img-vis">
+                          <img src="../assets/sauces/chutney.png" alt="" id="img-chu" class="img-vis">
+                          <img src="../assets/sauces/ketchup.png" alt="" id="img-ket" class="img-vis">
+                          <img src="../assets/sauces/mustard.png" alt="" id="img-must" class="img-vis">
+                          <img src="../assets/sauces/sweetchilli.png" alt="" id="img-swe" class="img-vis">
                         </div>
 
                         <div class="bread-btm">
-                            <img src="../assets/bread/white_bread.png" alt="">
+                            <img src="../assets/bread/white_bread.png" alt="" id="br-btm">
                         </div>
+
+                        
                         
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="builder-heading">
                         <h3>Sub Build You Do:</h3>
+                        <h3 id="sub-price">R0.00</h3>
                     </div>
 
                     <div class="form-bg">
-                        <form>
+                        <form id="subBuilder" onchange="totalInRealTime(), enoughIngreds()">
                             <div class="form-group">
-                              <label for="inputEmail3" class="col-sm-4 col-form-label">Enter a name for your sub:</label>
+                              <label for="subName" class="col-sm-4 col-form-label">Enter a name for your sub:</label>
                               <div class="col-sm-10">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="Your Awesome Sub Name">
+                                <input type="text" class="form-control" id="subName" placeholder="Your Awesome Sub Name">
                               </div>
                             </div>
-                            <fieldset class="form-group">
+                            <fieldset class="form-group breads">
                               <div>
-                                <legend class="col-form-label col-sm-2 pt-0">Bread Type:</legend>
-                                <div class="col-sm-10">
+                                <legend class="col-form-label col-sm-5 pt-0">Bread Type:</legend>
+                                <div class="col-sm-12">
                                   <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                                    <label class="form-check-label" for="gridRadios1">
+                                    <input class="form-check-input" type="radio" name="breadRadios" id="subWhite" value="White Bread" checked data-cost="20" onclick="breadChange('br-top')">
+                                    <label class="form-check-label" for="subWhite">
                                       White Bread
                                     </label>
                                   </div>
                                   <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                                    <label class="form-check-label" for="gridRadios2">
+                                    <input class="form-check-input" type="radio" name="breadRadios" id="subRye" value="Rye Bread" data-cost="25" onclick="breadChange('br-top')">
+                                    <label class="form-check-label" for="subRye">
                                       Rye Bread
                                     </label>
                                   </div>
                                   <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
-                                    <label class="form-check-label" for="gridRadios3">
+                                    <input class="form-check-input" type="radio" name="breadRadios" id="subCia" value="Ciabatta Bread" data-cost="35" onclick="breadChange('br-top')">
+                                    <label class="form-check-label" for="subCia">
                                       Ciabatta
                                     </label>
                                   </div>
                                 </div>
                               </div>
                             </fieldset>
-                            <div class="form-group">
+
+                            <div class="form-group toppinss">
                               <div class="col-sm-2">TOPPINGS!</div>
-                              <div class="col-sm-10">
+                              <div class="col-sm-12">
 
                                 
 
-                                <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                  <label class="form-check-label" for="gridCheck1">
-                                    Bacon
-                                  </label>
-                                  <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                  <label class="form-check-label" for="gridCheck2">
-                                    Gouda
-                                  </label>
-                                  <input class="form-check-input" type="checkbox" id="gridCheck3">
-                                  <label class="form-check-label" for="gridCheck3">
-                                    Feta
-                                  </label>
-                                  <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                  <label class="form-check-label" for="gridCheck1">
-                                    Blue Cheese
-                                  </label>
-                                  <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                  <label class="form-check-label" for="gridCheck1">
-                                    Ham
-                                  </label>
-                                  <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                  <label class="form-check-label" for="gridCheck1">
-                                    Lettuce
-                                  </label>
-                                  <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                  <label class="form-check-label" for="gridCheck1">
-                                    Beef Strips
-                                  </label>
-                                  <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                  <label class="form-check-label" for="gridCheck1">
-                                    Onion
-                                  </label>
-                                  <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                  <label class="form-check-label" for="gridCheck1">
-                                    Mushroom
-                                  </label>
-                                  <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                  <label class="form-check-label" for="gridCheck1">
-                                    Red Onion
-                                  </label>
-                                  <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                  <label class="form-check-label" for="gridCheck1">
-                                    Carrot
-                                  </label>
-                                  <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                  <label class="form-check-label" for="gridCheck1">
-                                    Cucumber
-                                  </label>
+                                <div class="toppings row">
+                                  <div class="col-2">
+                                    <input class="form-check-input" name="tops" type="checkbox" id="bacon" value="bacon" data-cost="15" onclick="viewIngred('img-bac', 'bacon')">
+                                    <label class="form-check-label" for="bacon">
+                                      Bacon
+                                    </label>
+                                  </div>
+                                  
+                                  <div class="col-2">
+                                    <input class="form-check-input" name="tops" type="checkbox" id="avocado" value="Avocado" data-cost="20" onclick="viewIngred('img-avo', 'avocado')">
+                                    <label class="form-check-label" for="avocado">
+                                      Avocado
+                                    </label>
+                                  </div>
+
+                                  <div class="col-2">
+                                    <input class="form-check-input" name="tops" type="checkbox" id="blueCheese" value="Blue Cheese" data-cost="25" onclick="viewIngred('img-blu', 'blueCheese')">
+                                    <label class="form-check-label" for="blueCheese">
+                                      Blue Cheese
+                                    </label>
+                                  </div>
+
+                                  <div class="col-2">
+                                    <input class="form-check-input" name="tops" type="checkbox" id="carrot" value="Carrot" data-cost="10" onclick="viewIngred('img-car', 'carrot')">
+                                    <label class="form-check-label" for="carrot">
+                                      Carrot
+                                    </label>
+                                  </div>
+
+                                  <div class="col-2">
+                                    <input class="form-check-input" name="tops" type="checkbox" id="cheddar" value="Cheddar" data-cost="15" onclick="viewIngred('img-che', 'cheddar')">
+                                    <label class="form-check-label" for="cheddar">
+                                      Cheddar
+                                    </label>
+                                  </div>
+
+                                  <div class="col-2">
+                                    <input class="form-check-input" name="tops" type="checkbox" id="chicken" value="Chicken" data-cost="20" onclick="viewIngred('img-chi', 'chicken')">
+                                    <label class="form-check-label" for="chicken">
+                                      Chicken
+                                    </label>
+                                  </div>
+
+                                  <div class="col-2">
+                                    <input class="form-check-input" name="tops" type="checkbox" id="cucumber" value="Cucumber" data-cost="7" onclick="viewIngred('img-cuc', 'cucumber')">
+                                    <label class="form-check-label" for="cucumber">
+                                      Cucumber
+                                    </label>
+                                  </div>
+
+                                  <div class="col-2">
+                                    <input class="form-check-input" name="tops" type="checkbox" id="egg" value="Egg" data-cost="7" onclick="viewIngred('img-egg', 'egg')">
+                                    <label class="form-check-label" for="egg">
+                                      Egg
+                                    </label>
+                                  </div>
+                                  
+                                  <div class="col-2">
+                                    <input class="form-check-input" name="tops" type="checkbox" id="feta" value="Feta" data-cost="18" onclick="viewIngred('img-fet', 'feta')">
+                                    <label class="form-check-label" for="feta">
+                                      Feta
+                                    </label>
+                                  </div>
+
+                                  <div class="col-2">
+                                    <input class="form-check-input" name="tops" type="checkbox" id="garlic" value="Garlic" data-cost="5" onclick="viewIngred('img-ger', 'garlic')">
+                                    <label class="form-check-label" for="garlic">
+                                      Garlic
+                                    </label>
+                                  </div>
+                                  
+                                  <div class="col-2">
+                                    <input class="form-check-input" name="tops" type="checkbox" id="gouda" value="Gouda" data-cost="12" onclick="viewIngred('img-gou', 'gouda')">
+                                    <label class="form-check-label" for="gouda">
+                                      Gouda
+                                    </label>
+                                  </div>
+
+                                  <div class="col-2">
+                                    <input class="form-check-input" name="tops" type="checkbox" id="ham" value="Ham" data-cost="17" onclick="viewIngred('img-ham', 'ham')">
+                                    <label class="form-check-label" for="ham">
+                                      Ham
+                                    </label>
+                                  </div>
+
+                                  <div class="col-2">
+                                    <input class="form-check-input" name="tops" type="checkbox" id="lettuce" value="Lettuce" data-cost="6" onclick="viewIngred('img-let', 'lettuce')">
+                                    <label class="form-check-label" for="lettuce">
+                                      Lettuce
+                                    </label>
+                                  </div>
+
+                                  <div class="col-2">
+                                    <input class="form-check-input" name="tops" type="checkbox" id="mushroom" value="Mushroom" data-cost="16" onclick="viewIngred('img-mus', 'mushroom')">
+                                    <label class="form-check-label" for="mushroom">
+                                      Mushroom
+                                    </label>
+                                  </div>
+
+                                  <div class="col-2">
+                                    <input class="form-check-input" name="tops" type="checkbox" id="onion" value="Onion" data-cost="12" onclick="viewIngred('img-oni', 'onion')">
+                                    <label class="form-check-label" for="onion">
+                                      Onion
+                                    </label>
+                                  </div>
+                                  
+                                  <div class="col-2">
+                                    <input class="form-check-input" name="tops" type="checkbox" id="paprika" value="Paprika" data-cost="9" onclick="viewIngred('img-pap', 'paprika')">
+                                    <label class="form-check-label" for="paprika">
+                                      Paprika
+                                    </label>
+                                  </div>
+
+                                  <div class="col-2">
+                                    <input class="form-check-input" name="tops" type="checkbox" id="pepperoni" value="Pepperoni" data-cost="35" onclick="viewIngred('img-pep', 'pepperoni')">
+                                    <label class="form-check-label" for="pepperoni">
+                                      Pepperoni
+                                    </label>
+                                  </div>
+
+                                  <div class="col-2">
+                                    <input class="form-check-input" name="tops" type="checkbox" id="redOnion" value="Red Onion" data-cost="10" onclick="viewIngred('img-red', 'redOnion')">
+                                    <label class="form-check-label" for="redOnion">
+                                      Red Onion
+                                    </label>
+                                  </div>
+
+                                  <div class="col-2">
+                                    <input class="form-check-input" name="tops" type="checkbox" id="tomato" value="Tomato" data-cost="9" onclick="viewIngred('img-tom', 'tomato')">
+                                    <label class="form-check-label" for="tomato">
+                                      Tomato
+                                    </label>
+                                  </div>
+
+                                  <div class="col-2">
+                                    <input class="form-check-input" name="tops" type="checkbox" id="crisps" value="Crisps" data-cost="7" onclick="viewIngred('img-cri', 'crisps')">
+                                    <label class="form-check-label" for="crisps">
+                                      Crisps
+                                    </label>
+                                  </div>
+
                                 </div>
                               </div>
                             </div>
-                            <div class="form-group row">
-                              <div class="col-sm-10">
-                                <div class="page2-btn">
-                                    <button type="submit" class="btn btn-primary btn-lg prmbtnCT">Checkout!</button>
-                                    <button type="submit" class="btn btn-primary btn-lg prmbtnCT">Build A new Sub!</button>
+
+                            <div class="form-group saucess">
+                              <div class="col-sm-2">Sauces!</div>
+                              <div class="col-sm-12">
+                              
+                                <div class="sauces row">
+                                  <div class="col-3">
+                                    <input class="form-check-input" name="sauce" type="checkbox" id="islandsSauce" value="1000 Islands" data-cost="10" onclick="viewIngred('img-100', 'islandsSauce')">
+                                    <label class="form-check-label" for="islandsSauce">
+                                      1000 Islands
+                                    </label>
+                                  </div>
+
+                                  <div class="col-3">
+                                    <input class="form-check-input" name="sauce" type="checkbox" id="tomSauce" value="Tomato Sauce" data-cost="10" onclick="viewIngred('img-ket', 'tomSauce')">
+                                    <label class="form-check-label" for="tomSauce">
+                                      Tomato Sauce
+                                    </label>
+                                  </div>
+
+                                  <div class="col-3">
+                                    <input class="form-check-input" name="sauce" type="checkbox" id="musSauce" value="Mustard Sauce" data-cost="10" onclick="viewIngred('img-must', 'musSauce')">
+                                    <label class="form-check-label" for="musSauce">
+                                      Mustard
+                                    </label>
+                                  </div>
+
+                                  <div class="col-3">
+                                    <input class="form-check-input" name="sauce" type="checkbox" id="scSauce" value="Sweet Chilli" data-cost="10" onclick="viewIngred('img-swe', 'scSauce')">
+                                    <label class="form-check-label" for="scSauce">
+                                      Sweet Chilli
+                                    </label>
+                                  </div>
+                                  
+                                  <div class="col-3">
+                                    <input class="form-check-input" name="sauce" type="checkbox" id="chSauce" value="Chutney" data-cost="10" onclick="viewIngred('img-chu', 'chSauce')">
+                                    <label class="form-check-label" for="chSauce">
+                                      Chutney
+                                    </label>
+                                  </div>
+
                                 </div>
-                                
                               </div>
                             </div>
-                          </form>
+
+                            <div class="selectionMinDiv">
+                              <p id="selectionMin">Please select a minimum of <strong>5</strong> toppings and a minimum of <strong>1</strong> sauce :)</p>
+                            </div>
+                            
+
+                          </div>
+                        </div>
+                            
+                      </form>
+                    </div>
+
+                    
+
+                    <div class="row">
+                      <div class="order-details">
+                        <div class="form-group row">
+                          <div class="col-6" >
+                            <h2 id="order-total">Current Order Total: R0.00</h2>
+                          </div>
+                          <div class="col-6">
+                            <div class="page2-btn">                                
+                              <button type="button" class="btn btn-primary btn-lg prmbtnCT" id="buildNewSubBtn" onclick="makeSub(), showOrders(), enoughIngreds()" disabled>Confirm Sub and Build a New One</button> 
+                              <button type="button" class="btn btn-primary btn-lg prmbtnCT" id="checkoutBtn" onclick="checkOut()" disabled>Head to Checkout</button>
+                            </div>
+                            
+                            
+                          </div>
+                          <div class="row" id="current-orders">
+                            
+                          </div>
+                        </div>
+
+
+                      </div>
                     </div>
 
                 </div>
+
+                
+
             </div>
+            
         </div>
+
+        
+
     </div>
 
 
