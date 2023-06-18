@@ -1,3 +1,74 @@
+displayDummySubs = () => {
+    let dummySubArea = document.getElementById("dummySubsDisplay");
+    dummySubArea.innerHTML = '';
+  
+    let carouselItems = `
+      <div class="carousel-item active">
+        <div class="sub-carol">
+          <div class="row">
+    `;
+  
+    for (let i = 0; i < 4; i++) {
+      let image = dummySubData[i].image;
+      let name = dummySubData[i].subName;
+      let description = dummySubData[i].description;
+  
+      let card = `
+        <div class="col-3">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="${image}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">${name}</h5>
+              <p class="card-text">${description}</p>
+              <a href="#" class="btn btn-primary">View Recipe</a>
+            </div>
+          </div>
+        </div>
+      `;
+  
+      carouselItems += card;
+    }
+  
+    carouselItems += `
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="sub-carol">
+          <div class="row">
+    `;
+  
+    for (let i = 4; i < dummySubData.length; i++) {
+      let image = dummySubData[i].image;
+      let name = dummySubData[i].subName;
+      let description = dummySubData[i].description;
+  
+      let card = `
+        <div class="col-3">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="${image}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">${name}</h5>
+              <p class="card-text">${description}</p>
+              <a href="#" class="btn btn-primary">View Recipe</a>
+            </div>
+          </div>
+        </div>
+      `;
+  
+      carouselItems += card;
+    }
+  
+    carouselItems += `
+          </div>
+        </div>
+      </div>
+    `;
+  
+    dummySubArea.innerHTML = carouselItems;
+  }
+
+
 viewIngred = (idImg, checkBx) => {
 
     let img = document.getElementById(idImg);

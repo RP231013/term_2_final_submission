@@ -14,12 +14,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Reem+Kufi+Fun:wght@400;700&display=swap" rel="stylesheet">
 
-
+    <script src="js/data.js"></script>
     <script src="js/index.js"></script>
     <title>SuperSubs</title>
   </head>
 
-  <body>
+  <body onload="displayDummySubs()">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="index.html">
@@ -35,7 +35,7 @@
         <a class="nav-link" href="pages/builder.html">Build A Sub</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="pages/checkout.html">Checkout</a>
+        <a class="nav-link disabled" href="pages/checkout.html" >Checkout</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -86,128 +86,20 @@
       </div>
 
       <div id="subCarol" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-
-            <div class="sub-carol">
-              <div class="row">
-                <div class="col-3">
-                  <!--Single card-->
-                  <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/BG/bg2.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">Hero Edition</h5>
-                      <p class="card-text">Some cool descriptive text about an awesome sub!</p>
-                      <a href="#" class="btn btn-primary">View Recipe</a>
-                    </div>
-                  </div>
-                  <!--end card-->
-                </div>
-
-                <div class="col-3">
-                  <!--Single card-->
-                  <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/BG/bg2.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">MegaWhatt</h5>
-                      <p class="card-text">Some cool descriptive text about an awesome sub!</p>
-                      <a href="#" class="btn btn-primary">View Recipe</a>
-                    </div>
-                  </div>
-                  <!--end card-->
-                </div>
-
-                <div class="col-3">
-                  <!--Single card-->
-                  <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/BG/bg2.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">EEEWWW</h5>
-                      <p class="card-text">Some cool descriptive text about an awesome sub!</p>
-                      <a href="#" class="btn btn-primary">View Recipe</a>
-                    </div>
-                  </div>
-                  <!--end card-->
-                </div>
-
-                <div class="col-3">
-                  <!--Single card-->
-                  <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/BG/bg2.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">HEcTiC</h5>
-                      <p class="card-text">Some cool descriptive text about an awesome sub!</p>
-                      <a href="#" class="btn btn-primary">View Recipe</a>
-                    </div>
-                  </div>
-                  <!--end card-->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="sub-carol">
-              <div class="row">
-                <div class="col-3">
-                  <!--Single card-->
-                  <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/BG/bg2.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">WhyIsItSpicy</h5>
-                      <p class="card-text">Some cool descriptive text about an awesome sub!</p>
-                      <a href="#" class="btn btn-primary">View Recipe</a>
-                    </div>
-                  </div>
-                  <!--end card-->
-                </div>
-
-                <div class="col-3">
-                  <!--Single card-->
-                  <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/BG/bg2.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">Name it what?</h5>
-                      <p class="card-text">Some cool descriptive text about an awesome sub!</p>
-                      <a href="#" class="btn btn-primary">View Recipe</a>
-                    </div>
-                  </div>
-                  <!--end card-->
-                </div>
-
-                <div class="col-3">
-                  <!--Single card-->
-                  <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/BG/bg2.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">Cheesanator</h5>
-                      <p class="card-text">Some cool descriptive text about an awesome sub!</p>
-                      <a href="#" class="btn btn-primary">View Recipe</a>
-                    </div>
-                  </div>
-                  <!--end card-->
-                </div>
-
-                <div class="col-3">
-                  <!--Single card-->
-                  <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/BG/bg2.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">BaconBeast</h5>
-                      <p class="card-text">Some cool descriptive text about an awesome sub!</p>
-                      <a href="#" class="btn btn-primary">View Recipe</a>
-                    </div>
-                  </div>
-                  <!--end card-->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          </div>
+        <div class="carousel-inner" id="dummySubsDisplay">
+          
 
         </div>
-      </div>
+
+        </div>
+
+
+
+
+
+
+
+    </div>
       
     </div>
 
