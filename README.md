@@ -1,4 +1,4 @@
-![Opal Seas Logo](/assets/SuperSubsLOGO.png)
+![Opal Seas Logo](/assets/SuperSubsLOGO.jpg)
 
 Welcome to SuperSubs - a subway sandwich builder website. 
 
