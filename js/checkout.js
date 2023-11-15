@@ -41,7 +41,7 @@ applyDiscount = () => {
 
     
 
-    if(code !== "friyaya" && code !== "Where did you get this awesome code?"){
+    if(code !== "friyaya" && code !== "Where did you find this awesome code?"){
         wrongCount++;
         if(wrongCount >= 4){
             document.getElementById("discount").disabled = true;
@@ -72,6 +72,7 @@ applyDiscount = () => {
 
         document.getElementById("discount").disabled = true;
     }
+
     
 }
 
